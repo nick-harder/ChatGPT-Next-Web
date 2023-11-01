@@ -84,7 +84,7 @@ function EditPromptModal(props: { id: string; onClose: () => void }) {
           <input
             type="text"
             value={prompt.title}
-            readOnly={!prompt.isUser}
+            readOnly={false}
             className={styles["edit-prompt-title"]}
             onInput={(e) =>
               promptStore.updatePrompt(
@@ -95,7 +95,7 @@ function EditPromptModal(props: { id: string; onClose: () => void }) {
           ></input>
           <Input
             value={prompt.content}
-            readOnly={!prompt.isUser}
+            readOnly={false}
             className={styles["edit-prompt-content"]}
             rows={10}
             onInput={(e) =>
