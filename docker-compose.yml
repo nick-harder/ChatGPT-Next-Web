@@ -7,8 +7,8 @@ services:
     ports:
       - 3000:3000
     environment:
-      - OPENAI_API_KEY=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
-      - CODE=d39NZX5cmMpSfe, mxrTiP788o34xk
+      - OPENAI_API_KEY=$OPENAI_API_KEY
+      - CODE=$CODE
       - BASE_URL=$BASE_URL
       - OPENAI_ORG_ID=$OPENAI_ORG_ID
       - HIDE_USER_API_KEY=1
@@ -18,4 +18,3 @@ services:
       replicas: 1
       placement:      
         constraints: [node.role == manager]
-
