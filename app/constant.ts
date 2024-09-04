@@ -266,8 +266,9 @@ const openaiModels = [
   // "gpt-4-32k-0613",
   // "gpt-4-turbo",
   // "gpt-4-turbo-preview",
-  "gpt-4o",
+  // "gpt-4o",
   // "gpt-4o-2024-05-13",
+  "gpt-4o-2024-08-06",
   "gpt-4o-mini",
   // "gpt-4o-mini-2024-07-18",
   // "gpt-4-vision-preview",
@@ -326,6 +327,18 @@ const anthropicModels = [
 //   "qwen-max-longcontext",
 // ];
 
+// const tencentModels = [
+//   "hunyuan-pro",
+//   "hunyuan-standard",
+//   "hunyuan-lite",
+//   "hunyuan-role",
+//   "hunyuan-functioncall",
+//   "hunyuan-code",
+//   "hunyuan-vision",
+// ];
+
+// const moonshotModes = ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"];
+
 // const iflytekModels = [
 //   "general",
 //   "generalv3",
@@ -347,26 +360,26 @@ export const DEFAULT_MODELS = [
       sorted: 1, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
-  // ...openaiModels.map((name) => ({
-  //   name,
-  //   available: true,
-    // sorted: seq++,
-  //   provider: {
-  //     id: "azure",
-  //     providerName: "Azure",
-  //     providerType: "azure",
-      // sorted: 2,
-  //   },
-  // })),
+  ...openaiModels.map((name) => ({
+    name,
+    available: true,
+    sorted: seq++,
+    provider: {
+      id: "azure",
+      providerName: "Azure",
+      providerType: "azure",
+      sorted: 2,
+    },
+  })),
   // ...googleModels.map((name) => ({
   //   name,
   //   available: true,
-    // sorted: seq++,
+  //   sorted: seq++,
   //   provider: {
   //     id: "google",
   //     providerName: "Google",
   //     providerType: "google",
-      // sorted: 3,
+  //     sorted: 3,
   //   },
   // })),
   ...anthropicModels.map((name) => ({
@@ -383,28 +396,67 @@ export const DEFAULT_MODELS = [
   // ...baiduModels.map((name) => ({
   //   name,
   //   available: true,
+  //   sorted: seq++,
   //   provider: {
   //     id: "baidu",
   //     providerName: "Baidu",
   //     providerType: "baidu",
+  //     sorted: 5,
   //   },
   // })),
   // ...bytedanceModels.map((name) => ({
   //   name,
   //   available: true,
+  //   sorted: seq++,
   //   provider: {
   //     id: "bytedance",
   //     providerName: "ByteDance",
   //     providerType: "bytedance",
+  //     sorted: 6,
   //   },
   // })),
   // ...alibabaModes.map((name) => ({
   //   name,
   //   available: true,
+  //   sorted: seq++,
   //   provider: {
   //     id: "alibaba",
   //     providerName: "Alibaba",
   //     providerType: "alibaba",
+  //     sorted: 7,
+  //   },
+  // })),
+  // ...tencentModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "tencent",
+  //     providerName: "Tencent",
+  //     providerType: "tencent",
+  //     sorted: 8,
+  //   },
+  // })),
+  // ...moonshotModes.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "moonshot",
+  //     providerName: "Moonshot",
+  //     providerType: "moonshot",
+  //     sorted: 9,
+  //   },
+  // })),
+  // ...iflytekModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "iflytek",
+  //     providerName: "Iflytek",
+  //     providerType: "iflytek",
+  //     sorted: 10,
   //   },
   // })),
 ] as const;
